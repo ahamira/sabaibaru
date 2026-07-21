@@ -17,5 +17,7 @@ public class UIManager : MonoBehaviour
             "\nStone : " + InventoryManager.instance.stone +
             "\nWeapon : " + weapon +
             "\nPress C to Craft";
+        string key =
+    InventoryManager.instance.hasEscapeKey? "Yes": "No";
     }
 }

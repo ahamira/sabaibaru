@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public int stone = 0;
 
     public bool hasStoneSword = false;
-
+    public bool hasEscapeKey = false;
     void Awake()
     {
         instance = this;

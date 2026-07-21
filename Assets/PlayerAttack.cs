@@ -39,6 +39,13 @@ public class PlayerAttack : MonoBehaviour
             {
                 enemy.TakeDamage();
             }
+            BossHealth boss = hit.GetComponent<BossHealth>();
+
+            if (boss != null &&
+                InventoryManager.instance.hasStoneSword)
+            {
+                boss.TakeDamage();
+            }
         }
     }
 
