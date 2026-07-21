@@ -21,8 +21,6 @@ public class PlayerAttack : MonoBehaviour
                 transform.position,
                 attackRange
             );
-
-
         foreach (Collider2D hit in hits)
         {
             ResourceNode resource =
@@ -31,6 +29,15 @@ public class PlayerAttack : MonoBehaviour
             if (resource != null)
             {
                 resource.TakeDamage();
+            }
+
+            EnemyHealth enemy =
+                hit.GetComponent<EnemyHealth>();
+
+            if (enemy != null &&
+                InventoryManager.instance.hasStoneSword)
+            {
+                enemy.TakeDamage();
             }
         }
     }

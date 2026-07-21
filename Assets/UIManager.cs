@@ -7,8 +7,15 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        string weapon =
+            InventoryManager.instance.hasStoneSword
+            ? "Stone Sword"
+            : "None";
+
         inventoryText.text =
-            "ñÿ : " + InventoryManager.instance.wood +
-            "\nêŒ : " + InventoryManager.instance.stone;
+            "Wood : " + InventoryManager.instance.wood +
+            "\nStone : " + InventoryManager.instance.stone +
+            "\nWeapon : " + weapon +
+            "\nPress C to Craft";
     }
 }
