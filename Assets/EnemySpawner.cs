@@ -20,16 +20,17 @@ public class EnemySpawner : MonoBehaviour
             timer = 0f;
         }
     }
-
     void SpawnEnemy()
     {
-        Vector2 randomPos =
+        Vector2 dir = Random.insideUnitCircle.normalized;
+
+        Vector2 spawnPos =
             (Vector2)transform.position +
-            Random.insideUnitCircle * spawnRadius;
+            dir * spawnRadius;
 
         Instantiate(
             enemyPrefab,
-            randomPos,
+            spawnPos,
             Quaternion.identity
         );
     }
