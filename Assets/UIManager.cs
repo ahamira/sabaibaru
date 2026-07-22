@@ -4,6 +4,14 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI inventoryText;
+    public TextMeshProUGUI hpText;
+
+    PlayerStatus player;
+
+    void Start()
+    {
+        player = FindFirstObjectByType<PlayerStatus>();
+    }
 
     void Update()
     {
@@ -15,9 +23,9 @@ public class UIManager : MonoBehaviour
         inventoryText.text =
             "Wood : " + InventoryManager.instance.wood +
             "\nStone : " + InventoryManager.instance.stone +
-            "\nWeapon : " + weapon +
-            "\nPress C to Craft";
-        string key =
-    InventoryManager.instance.hasEscapeKey? "Yes": "No";
+            "\nWeapon : " + weapon;
+
+        hpText.text =
+            "HP : " + player.GetHP();
     }
 }

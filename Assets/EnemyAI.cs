@@ -22,4 +22,14 @@ public class EnemyAI : MonoBehaviour
                 moveSpeed * Time.deltaTime
             );
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject
+                .GetComponent<PlayerStatus>()
+                .TakeDamage(1);
+        }
+    }
 }
